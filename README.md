@@ -38,12 +38,7 @@ Under the guidance of Dr. Veena Bharti to Ajay Kumar Garg Engineering College, G
 4. **Machine Learning Integration**:
    - Utilize self-reported behavioral data for improved disease detection.
 
-## Technologies Used
 
-- Frontend: [List of frontend technologies/frameworks]
-- Backend: [List of backend technologies/frameworks]
-- Database: [Database technology used]
-- Machine Learning: [Machine learning libraries/frameworks used]
 
 ## Installation
 
