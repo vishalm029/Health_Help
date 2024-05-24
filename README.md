@@ -44,11 +44,11 @@ Under the guidance of Dr. Veena Bharti to Ajay Kumar Garg Engineering College, G
 
 1. Clone the repository:
    ```
-   git clone https://github.com/your-repo.git
+   git clone https://github.com/vishalm029/Health_Help.git
    ```
 2. Install dependencies:
    ```
-   cd your-project-directory
+   cd https://github.com/vishalm029/Health_Help
    npm install
    ```
 3. Configure environment variables (if applicable).
