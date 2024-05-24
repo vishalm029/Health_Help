@@ -1,0 +1,95 @@
+{% include 'patientheader.html' %}
+
+  <div class="page-content page-container" id="page-content">
+    <div class="padding" style="border:1px solid gray; border-radius: 10px;">
+        <h3 style="text-align: center;">Book Your Appointment</h3>
+        <form >
+        <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="email">Consultation Mode</label>
+                        <select class="form-control" id="mode" name="mode">
+                            <option>Virtual</option>
+                            <option>In Person</option>
+                        </select>
+                      </div>
+                </div>
+                <div class="col-md-6" style="visibility: hidden;">
+                    <div class="form-group">
+                        <label for="email">Doctor</label>
+                        <select class="form-control">
+                        </select>
+                      </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="email">Doctor</label>
+                        <select class="form-control" id="doctor" name="doctor">
+                        </select>
+                      </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="email">Appointment Time</label>
+                        <input type="datetime-local" id="time" name="time" class="form-control"> 
+                      </div>
+                </div>
+                <div class="col-md-12">
+                    <div class="form-group">
+                        <label for="email">Reason</label>
+                        <textarea class="form-control" id="reason" name="reason" placeholder="Suffering from headache"></textarea>
+                      </div>
+                </div>
+                <div class="col-md-4"></div>
+                <div class="col-md-4"><button type="button" class="btn btn-success w-100" id="applicationbtn">Submit</button></div>
+                <div class="col-md-4"></div>    
+        </div>
+    </form>
+    </div>
+    </div>
+{% include 'footer.html' %}
+<script type="text/javascript">
+    
+    $("#applicationbtn").click(function(){
+          var mode = $("#mode").val();
+          var doctor = $("#doctor").val();
+          var time = $("#time").val();
+          var reason = $("#reason").val();
+
+
+            $.ajax({
+              url:"/addappoint", 
+              type: "post", 
+              dataType: 'json',
+              data: {"mode":mode, "doctor":doctor, "time":time, "reason":reason},
+                success: function(output){
+                  if (output == "0"){
+                    alert('Appointment not added! Try again')
+                  }else if (output == "1"){
+                    alert('Appointment added!')
+                    
+                  }
+                }
+              });
+        
+        });
+
+
+    $.ajax({
+        url:"/getdoctornames", 
+        type: "post", 
+        dataType: 'json',
+        data: {},
+        beforeSend: function(){
+          $(".loader").show();
+        },
+        success: function(output) {
+            let appenddata = 0
+             for(var i=0; i<=output.length-1; i++){
+                appenddata += '<option value="'+output[i]["doctor_id"]+'">'+output[i]["name"]+"</option>"
+             }
+            $("#doctor").append(appenddata)
+        }
+      });
+
+</script>

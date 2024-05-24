@@ -1,0 +1,111 @@
+{% include 'patientheader.html' %}
+
+  <div class="page-content page-container" id="page-content">
+    <div class="padding" style="border:1px solid gray; border-radius: 10px;">
+        <h3 style="text-align: center;">Appointment List</h3>
+        <div class="container">
+            <ul class="nav nav-tabs">
+              <li class="active"><a data-toggle="tab" href="#open">Upcoming Appointments</a></li>
+              <li><a data-toggle="tab" href="#close">Appointment History</a></li>
+            </ul>
+          
+            <div class="tab-content">
+              <div id="open" class="tab-pane fade in active">
+                <h3>Upcoming Appointments</h3>
+                <div style="display: flex;justify-content: flex-end;">
+                  <input class="form-control" id="myInput" type="text" placeholder="Search.." style="width: 30%;">
+                </div>
+                <br>
+                <table class="table table-bordered table-striped bg-primary">
+                  <thead>
+                    <tr>
+                      <th>S. No</th>
+                      <th>Appointment ID</th>
+                      <th>Doctor</th>
+                        <th>Mode</th>
+                      <th>Date Time</th>
+                      <th>Status</th>
+                    </tr>
+                  </thead>
+                  <tbody id="myTable">
+                    
+                  </tbody>
+                </table>
+              </div>
+              <style type="text/css">
+                td{
+                  color: black;
+                }
+              </style>
+              <div id="close" class="tab-pane fade">
+                <h3>Appointments History</h3>
+                <div style="display: flex;justify-content: flex-end;">
+                  <input class="form-control bg-info" id="myInput1" type="text" placeholder="Search.." style="width: 30%;">
+                </div>
+                
+                <br>
+                <table class="table table-bordered table-striped bg-primary">
+                  <thead>
+                    <tr>
+                      <th>S. No</th>
+                      <th>Appointment ID</th>
+                      <th>Doctor</th>
+                    
+                      <th>Date Time</th>
+                      <th>Status</th>
+                    </tr>
+                  </thead>
+                  <tbody id="myTable1">
+                    
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+    </div>
+    </div>
+
+{% include 'footer.html' %}
+<script>
+$(document).ready(function(){
+
+  $.ajax({
+        url:"/getpatientappointments", 
+        type: "post", 
+        dataType: 'json',
+        data: {},
+        beforeSend: function(){
+          $(".loader").show();
+        },
+        success: function(output) {
+            let appenddata = 0
+             for(var i=0; i<=output.length-1; i++){
+              status = '<span class="label label-warning">Applied</span>'
+              appenddata += `<tr>
+              <td>`+(i+1)+`</td>
+              <td>`+("APP"+output[i]["appid"])+`</td>
+              <td>`+output[i]["doctor_id"]+`</td>
+              <td>`+output[i]["mode"]+`</td>
+              <td>`+output[i]["timedata"]+`</td>
+              <td>`+status+`</td>
+              </tr>`
+             }
+            $("#myTable").html(appenddata)
+        }
+      });
+
+
+  $("#myInput").on("keyup", function() {
+    var value = $(this).val().toLowerCase();
+    $("#myTable tr").filter(function() {
+      $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+    });
+  });
+  $("#myInput1").on("keyup", function() {
+    var value = $(this).val().toLowerCase();
+    $("#myTable1 tr").filter(function() {
+      $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+    });
+  });
+});
+</script>

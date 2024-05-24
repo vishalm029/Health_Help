@@ -1,0 +1,77 @@
+{% include 'doctorheader.html' %}
+<style type="text/css">
+  .padding {
+              padding: 3rem !important;
+              top: 50%;
+              left: 50%;
+              position: absolute;
+              transform: translate(-50%,  -50%);
+          }
+</style>
+  <div class="page-content page-container" id="page-content">
+    <div class="padding" style="border:1px solid gray; border-radius: 10px;">
+        <h3 style="text-align: center;">Appointment List</h3>
+        <div class="container">
+            <table class="table table-bordered table-striped bg-primary">
+                <thead>
+                  <tr>
+                    <th>S. No</th>
+                    <th>Appointment ID</th>
+                    <th>Patient</th>
+                    <th>Date Time</th>
+                    <th>Status</th>
+                  </tr>
+                </thead>
+                <tbody id="myTable">
+                  
+                </tbody>
+              </table>
+            </div>
+        </div>
+    </div>
+
+
+<!-- Button trigger modal -->
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter" style="display: none;" >
+    Launch demo modal
+  </button>
+  
+<!-- Modal -->
+<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+        <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLongTitle">Message to the patient</h5>
+        </div>
+        <div class="modal-body">
+            <label for="email">Message to the patient</label>
+            <textarea class="form-control" placeholder="Meed ID or any message"></textarea>
+            
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-primary">Save changes</button>
+        </div>
+        </div>
+    </div>
+</div>
+
+
+<script src="js/jquery.min.js"></script>
+<script src="js/jquery.easing.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/custom.js"></script>
+<script src="contactform/contactform.js"></script>
+<script>
+    $(document).ready(function(){
+        $("#myInput").on("keyup", function() {
+        var value = $(this).val().toLowerCase();
+        $("#myTable tr").filter(function() {
+            $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+        });
+        });
+    });
+</script>
+</body>
+
+</html>

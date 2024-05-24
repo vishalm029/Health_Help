@@ -1,0 +1,527 @@
+{% include 'patientheader.html' %}
+  <div class="page-content page-container" id="page-content">
+    <div class="padding" style="border:1px solid gray; border-radius: 10px;">
+        <h3 style="text-align: center;">AI Based Disease Diagonosis</h3>
+        <div class="container">
+            <ul class="nav nav-tabs">
+              <li class="active"><a data-toggle="tab" href="#open">Health Help AI</a></li>
+              <li><a data-toggle="tab" href="#close">Diagonosis History</a></li>
+            </ul>
+            <style type="text/css">
+              td{
+                color: black;
+              }
+            </style>
+            <div class="tab-content">
+              <div id="open" class="tab-pane fade in active">
+                <h3>AI Based Disease Diagonosis</h3>
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label for="email">Symptom 1</label>
+                            <select class="form-control" id="symptom1" name="symptom1">
+                              <option value="0">No symptom</option>
+                              <option value="1">Skin rash</option>
+                              <option value="2">Fatigue</option>
+                              <option value="3">Muscle wasting</option>
+                              <option value="4">Itching</option>
+                              <option value="5">Headache</option>
+                              <option value="6">Vomiting</option>
+                              <option value="7">Muscle weakness</option>
+                              <option value="8">Acidity</option>
+                              <option value="9">Burning micturition</option>
+                              <option value="10">Joint pain</option>
+                              <option value="11">Constipation</option>
+                              <option value="12">Back pain</option>
+                              <option value="13">Continuous sneezing</option>
+                              <option value="14">Chills</option>
+                              <option value="15">Chest pain</option>
+                              <option value="16">Patches in throat</option>
+                              <option value="17">Stomach pain</option>
+                              <option value="18">Cramps</option>
+                              <option value="19">Weakness in limbs</option>
+                              <option value="20">Cough</option>
+                              <option value="21">Pus filled pimples</option>
+                              <option value="22">Breathlessness</option>
+                              <option value="23">Sunken eyes</option>
+                              <option value="24">Weight gain</option>
+                              <option value="25">Pain during bowel movements</option>
+                              <option value="26">Neck pain</option>
+                              <option value="27">Yellowish skin</option>
+                              <option value="28">Stiff neck</option>
+                              <option value="29">Mood swings</option>
+                              <option value="30">High fever</option>
+                              <option value="31">Bladder discomfort</option>
+                              <option value="32">Shivering</option>
+                              <option value="33">Indigestion</option>
+                              <option value="34">Weight loss</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label for="email">Symptom 2</label>
+                            <select class="form-control" id="symptom2" name="symptom2">
+                              <option value="0">No symptom</option>
+                              <option value="1">Skin rash</option>
+                              <option value="2">Fatigue</option>
+                              <option value="3">Muscle wasting</option>
+                              <option value="4">Itching</option>
+                              <option value="5">Headache</option>
+                              <option value="6">Vomiting</option>
+                              <option value="7">Muscle weakness</option>
+                              <option value="8">Acidity</option>
+                              <option value="9">Burning micturition</option>
+                              <option value="10">Joint pain</option>
+                              <option value="11">Constipation</option>
+                              <option value="12">Back pain</option>
+                              <option value="13">Continuous sneezing</option>
+                              <option value="14">Chills</option>
+                              <option value="15">Chest pain</option>
+                              <option value="16">Patches in throat</option>
+                              <option value="17">Stomach pain</option>
+                              <option value="18">Cramps</option>
+                              <option value="19">Weakness in limbs</option>
+                              <option value="20">Cough</option>
+                              <option value="21">Pus filled pimples</option>
+                              <option value="22">Breathlessness</option>
+                              <option value="23">Sunken eyes</option>
+                              <option value="24">Weight gain</option>
+                              <option value="25">Pain during bowel movements</option>
+                              <option value="26">Neck pain</option>
+                              <option value="27">Yellowish skin</option>
+                              <option value="28">Stiff neck</option>
+                              <option value="29">Mood swings</option>
+                              <option value="30">High fever</option>
+                              <option value="31">Bladder discomfort</option>
+                              <option value="32">Shivering</option>
+                              <option value="33">Indigestion</option>
+                              <option value="34">Weight loss</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label for="email">Symptom 3</label>
+                            <select class="form-control" id="symptom3" name="symptom3">
+                              <option value="0">No symptom</option>
+                              <option value="1">Skin rash</option>
+                              <option value="2">Fatigue</option>
+                              <option value="3">Muscle wasting</option>
+                              <option value="4">Itching</option>
+                              <option value="5">Headache</option>
+                              <option value="6">Vomiting</option>
+                              <option value="7">Muscle weakness</option>
+                              <option value="8">Acidity</option>
+                              <option value="9">Burning micturition</option>
+                              <option value="10">Joint pain</option>
+                              <option value="11">Constipation</option>
+                              <option value="12">Back pain</option>
+                              <option value="13">Continuous sneezing</option>
+                              <option value="14">Chills</option>
+                              <option value="15">Chest pain</option>
+                              <option value="16">Patches in throat</option>
+                              <option value="17">Stomach pain</option>
+                              <option value="18">Cramps</option>
+                              <option value="19">Weakness in limbs</option>
+                              <option value="20">Cough</option>
+                              <option value="21">Pus filled pimples</option>
+                              <option value="22">Breathlessness</option>
+                              <option value="23">Sunken eyes</option>
+                              <option value="24">Weight gain</option>
+                              <option value="25">Pain during bowel movements</option>
+                              <option value="26">Neck pain</option>
+                              <option value="27">Yellowish skin</option>
+                              <option value="28">Stiff neck</option>
+                              <option value="29">Mood swings</option>
+                              <option value="30">High fever</option>
+                              <option value="31">Bladder discomfort</option>
+                              <option value="32">Shivering</option>
+                              <option value="33">Indigestion</option>
+                              <option value="34">Weight loss</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label for="email">Symptom 4</label>
+                            <select class="form-control" id="symptom4" name="symptom4">
+                              <option value="0">No symptom</option>
+                              <option value="1">Skin rash</option>
+                              <option value="2">Fatigue</option>
+                              <option value="3">Muscle wasting</option>
+                              <option value="4">Itching</option>
+                              <option value="5">Headache</option>
+                              <option value="6">Vomiting</option>
+                              <option value="7">Muscle weakness</option>
+                              <option value="8">Acidity</option>
+                              <option value="9">Burning micturition</option>
+                              <option value="10">Joint pain</option>
+                              <option value="11">Constipation</option>
+                              <option value="12">Back pain</option>
+                              <option value="13">Continuous sneezing</option>
+                              <option value="14">Chills</option>
+                              <option value="15">Chest pain</option>
+                              <option value="16">Patches in throat</option>
+                              <option value="17">Stomach pain</option>
+                              <option value="18">Cramps</option>
+                              <option value="19">Weakness in limbs</option>
+                              <option value="20">Cough</option>
+                              <option value="21">Pus filled pimples</option>
+                              <option value="22">Breathlessness</option>
+                              <option value="23">Sunken eyes</option>
+                              <option value="24">Weight gain</option>
+                              <option value="25">Pain during bowel movements</option>
+                              <option value="26">Neck pain</option>
+                              <option value="27">Yellowish skin</option>
+                              <option value="28">Stiff neck</option>
+                              <option value="29">Mood swings</option>
+                              <option value="30">High fever</option>
+                              <option value="31">Bladder discomfort</option>
+                              <option value="32">Shivering</option>
+                              <option value="33">Indigestion</option>
+                              <option value="34">Weight loss</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label for="email">Symptom 5</label>
+                            <select class="form-control" id="symptom5" name="symptom5">
+                              <option value="0">No symptom</option>
+                              <option value="1">Skin rash</option>
+                              <option value="2">Fatigue</option>
+                              <option value="3">Muscle wasting</option>
+                              <option value="4">Itching</option>
+                              <option value="5">Headache</option>
+                              <option value="6">Vomiting</option>
+                              <option value="7">Muscle weakness</option>
+                              <option value="8">Acidity</option>
+                              <option value="9">Burning micturition</option>
+                              <option value="10">Joint pain</option>
+                              <option value="11">Constipation</option>
+                              <option value="12">Back pain</option>
+                              <option value="13">Continuous sneezing</option>
+                              <option value="14">Chills</option>
+                              <option value="15">Chest pain</option>
+                              <option value="16">Patches in throat</option>
+                              <option value="17">Stomach pain</option>
+                              <option value="18">Cramps</option>
+                              <option value="19">Weakness in limbs</option>
+                              <option value="20">Cough</option>
+                              <option value="21">Pus filled pimples</option>
+                              <option value="22">Breathlessness</option>
+                              <option value="23">Sunken eyes</option>
+                              <option value="24">Weight gain</option>
+                              <option value="25">Pain during bowel movements</option>
+                              <option value="26">Neck pain</option>
+                              <option value="27">Yellowish skin</option>
+                              <option value="28">Stiff neck</option>
+                              <option value="29">Mood swings</option>
+                              <option value="30">High fever</option>
+                              <option value="31">Bladder discomfort</option>
+                              <option value="32">Shivering</option>
+                              <option value="33">Indigestion</option>
+                              <option value="34">Weight loss</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label for="email">Symptom 6</label>
+                            <select class="form-control" id="symptom6" name="symptom6">
+                              <option value="0">No symptom</option>
+                              <option value="1">Skin rash</option>
+                              <option value="2">Fatigue</option>
+                              <option value="3">Muscle wasting</option>
+                              <option value="4">Itching</option>
+                              <option value="5">Headache</option>
+                              <option value="6">Vomiting</option>
+                              <option value="7">Muscle weakness</option>
+                              <option value="8">Acidity</option>
+                              <option value="9">Burning micturition</option>
+                              <option value="10">Joint pain</option>
+                              <option value="11">Constipation</option>
+                              <option value="12">Back pain</option>
+                              <option value="13">Continuous sneezing</option>
+                              <option value="14">Chills</option>
+                              <option value="15">Chest pain</option>
+                              <option value="16">Patches in throat</option>
+                              <option value="17">Stomach pain</option>
+                              <option value="18">Cramps</option>
+                              <option value="19">Weakness in limbs</option>
+                              <option value="20">Cough</option>
+                              <option value="21">Pus filled pimples</option>
+                              <option value="22">Breathlessness</option>
+                              <option value="23">Sunken eyes</option>
+                              <option value="24">Weight gain</option>
+                              <option value="25">Pain during bowel movements</option>
+                              <option value="26">Neck pain</option>
+                              <option value="27">Yellowish skin</option>
+                              <option value="28">Stiff neck</option>
+                              <option value="29">Mood swings</option>
+                              <option value="30">High fever</option>
+                              <option value="31">Bladder discomfort</option>
+                              <option value="32">Shivering</option>
+                              <option value="33">Indigestion</option>
+                              <option value="34">Weight loss</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label for="email">Symptom 7</label>
+                            <select class="form-control" id="symptom7" name="symptom7">
+                              <option value="0">No symptom</option>
+                              <option value="1">Skin rash</option>
+                              <option value="2">Fatigue</option>
+                              <option value="3">Muscle wasting</option>
+                              <option value="4">Itching</option>
+                              <option value="5">Headache</option>
+                              <option value="6">Vomiting</option>
+                              <option value="7">Muscle weakness</option>
+                              <option value="8">Acidity</option>
+                              <option value="9">Burning micturition</option>
+                              <option value="10">Joint pain</option>
+                              <option value="11">Constipation</option>
+                              <option value="12">Back pain</option>
+                              <option value="13">Continuous sneezing</option>
+                              <option value="14">Chills</option>
+                              <option value="15">Chest pain</option>
+                              <option value="16">Patches in throat</option>
+                              <option value="17">Stomach pain</option>
+                              <option value="18">Cramps</option>
+                              <option value="19">Weakness in limbs</option>
+                              <option value="20">Cough</option>
+                              <option value="21">Pus filled pimples</option>
+                              <option value="22">Breathlessness</option>
+                              <option value="23">Sunken eyes</option>
+                              <option value="24">Weight gain</option>
+                              <option value="25">Pain during bowel movements</option>
+                              <option value="26">Neck pain</option>
+                              <option value="27">Yellowish skin</option>
+                              <option value="28">Stiff neck</option>
+                              <option value="29">Mood swings</option>
+                              <option value="30">High fever</option>
+                              <option value="31">Bladder discomfort</option>
+                              <option value="32">Shivering</option>
+                              <option value="33">Indigestion</option>
+                              <option value="34">Weight loss</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-md-4" >
+                        <div class="form-group">
+                            <label for="email" style="visibility: hidden;">Sym</label>
+                            <button type="button" class="btn btn-primary" style="width: 100%;" id="signinbtn">AI Diagnose</button>
+                        </div>
+                        </div>
+                    </div>
+                    
+                    </div>
+           
+               
+        
+              <div id="close" class="tab-pane fade">
+                <h3>AI Diagnosis History</h3>
+                <div style="display: flex;justify-content: flex-end;">
+                  <input class="form-control bg-info" id="myInput1" type="text" placeholder="Search.." style="width: 30%;">
+                </div>
+                
+                <br>
+                <table class="table table-bordered table-striped bg-primary">
+                  <thead>
+                    <tr>
+                      <th>S. No</th>
+                      <th>Diagnose ID</th>
+                      <th>Prediction</th>
+                      <th>Date Time</th>
+                      <th>Action</th>
+                    </tr>
+                  </thead>
+                  <tbody id="myTable1">
+                    
+                  </tbody>
+                </table>
+              </div>
+
+
+            </div>
+          </div>
+    </div>
+</div>
+
+
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" style="display: none;" id="showresult">
+  Launch demo modal
+</button>
+
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">AI Diagnosis</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body" style="display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-content: center;
+    align-items: center;">
+          <h5>Looks like you are affected by <span style="color: red; font-weight: bold;" id="predicteddisease"></span></h5>
+          <br>
+          <button type="button" class="btn btn-warning" id="reportbutton" style="width: 50%">Health Report</button>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div id="reportfield" style="display: none;">
+  <div style="border:2px double black;width: 80%;margin: auto;height: 98%;">
+    <div style="border-bottom:1px solid black; padding-bottom: 10px">
+      <center>
+        <h3 style="margin: 5px 0px 0px 0px">Disease Detection</h3>
+        <span>(This is an computer generated report)</span>
+      </center>
+    </div>
+    <br>
+    <div style="clear: both; margin-bottom: 10px">
+      <div style="margin-top: 10px; text-align: center;"><label><b>----  Disease Detection   ----</b></label></div>
+      <div style="float: left;width: 100%;padding: 10px;margin-left: 10px;">
+        <table>
+          <tr>
+            <td>Diagnosis</td>
+            <td>:</td>
+            <td id="tpred"></td>
+          </tr>
+          
+        </table>
+      </div>
+      <br>
+      <div style="margin-top: 10px; text-align: center;"><label><b>----  Given Symptoms   ----</b></label></div>
+      <div style="float: left;width: 100%;padding: 10px;margin-left: 10px;">
+
+      <ul>
+        <li id="s1"></li>
+        <li id="s2"></li>
+        <li id="s3"></li>
+        <li id="s4"></li>
+        <li id="s5"></li>
+        <li id="s6"></li>
+        <li id="s7"></li>
+      </ul>
+
+      </div>
+    </div><br><br>
+    <h3>Tips for a Good Life</h3>
+      <ul>
+        <li>Regular physical activity: Aim for at least 30 minutes of exercise most days of the week.</li>
+        <li>Healthy diet: Focus on consuming plenty of fruits, vegetables, lean proteins, and whole grains.</li>
+        <li>Maintain a healthy weight: Strive for a body mass index (BMI) within the healthy range.</li>
+        <li>Monitor blood sugar levels: Keep track of your blood sugar levels regularly, especially if you're at risk.</li>
+        <li>Avoid sugary beverages: Opt for water, herbal teas, or unsweetened beverages instead.</li>
+        <li>Limit processed foods: Minimize your intake of processed and high-sugar foods.</li>
+        <li>Quit smoking: Smoking increases the risk of CKD complications.</li>
+        <li>Manage stress: Practice relaxation techniques such as meditation, deep breathing, or yoga.</li>
+        <li>Get enough sleep: Aim for 7-9 hours of quality sleep each night.</li>
+      </ul>
+    </div>
+    <br>
+      
+
+    <div style="bottom: 30; position:absolute;left: 12%">
+      Report Downloaded on <span id="curdate"></span>
+    </div>
+  </div>
+
+{% include 'footer.html' %}
+  <script type="text/javascript">
+
+      $.ajax({
+        url:"/getaidiagnosishistory", 
+        type: "post", 
+        dataType: 'json',
+        data: {},
+        beforeSend: function(){
+          $(".loader").show();
+        },
+        success: function(output) {
+            let appenddata = 0
+             for(var i=0; i<=output.length-1; i++){
+              status = '<span class="label label-primary">Print</span>'
+              appenddata += `<tr>
+              <td>`+(i+1)+`</td>
+              <td>`+("DG"+output[i]["diagnose_id"])+`</td>
+              <td>`+output[i]["prediction"]+`</td>
+              <td>`+output[i]["created_at"]+`</td>
+              <td>`+status+`</td>
+              </tr>`
+             }
+            $("#myTable1").html(appenddata)
+        }
+      });
+
+
+        $("#reportbutton").click(function(){
+              var accidentReport = $("#reportfield").html();
+              var printWindow = window.open('', '', 'height=400,width=800');
+              printWindow.document.write(accidentReport);
+              printWindow.document.close();
+              printWindow.print();
+              printWindow.close();
+          })
+
+        $("#signinbtn").click(function(){
+            var symptom1 = $("#symptom1").val();
+            var symptom2 = $("#symptom2").val();
+            var symptom3 = $("#symptom3").val();
+            var symptom4 = $("#symptom4").val();
+            var symptom5 = $("#symptom5").val();
+            var symptom6 = $("#symptom6").val();
+            var symptom7 = $("#symptom7").val();
+
+            $.ajax({
+                url: "detectdisease",
+                type: "POST",
+                data:{
+                    "symptom1": symptom1,
+                    "symptom2": symptom2,
+                    "symptom3": symptom3,
+                    "symptom4": symptom4,
+                    "symptom5": symptom5,
+                    "symptom6": symptom6,
+                    "symptom7": symptom7
+                },
+                beforeSend: function() {
+                    $("#signinbtn").attr('disabled', 'true');
+                },
+                success: function(response) {
+                    $("#predfield").show()
+                    
+                    $("#predicteddisease").text(response)
+                    $("#signinbtn").removeAttr('disabled', 'false');
+
+                    $("#tpred").html(response)
+                    $("#s1").html( $("#symptom1 option").eq(symptom1).text());
+                    $("#s2").html( $("#symptom2 option").eq(symptom2).text());
+                    $("#s3").html( $("#symptom3 option").eq(symptom3).text());
+                    $("#s4").html( $("#symptom4 option").eq(symptom4).text());
+                    $("#s5").html( $("#symptom5 option").eq(symptom5).text());
+                    $("#s6").html( $("#symptom6 option").eq(symptom6).text());
+                    $("#s7").html( $("#symptom7 option").eq(symptom7).text());
+
+                    $("#showresult").click()
+                   
+                },
+                error: function(xhr, status, error) {
+                    $("#signinbtn").attr('disabled', 'false');
+                }
+            });
+            
+        });
+      </script>
